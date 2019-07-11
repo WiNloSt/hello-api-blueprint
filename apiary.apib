@@ -3,6 +3,8 @@ HOST: https://api.simplesat.io/api
 
 # test-simplesat
 
+# Group Examples
+
 ## Answer Collections [/answers]
 
 ### Retrieve all Answers [GET]
@@ -33,3 +35,36 @@ HOST: https://api.simplesat.io/api
             { "rating": "5" }
 
 + Response 204
+
+# Group Integrations
+
+## Custom field mapping [/fields]
+
+### Retrieve available field options [GET]
+
++ Request (application/json)
+
++ Response 200 (application/json)
+    + Attributes(object)
+    
+        - id: 1 (number, required)
+        - name: Simplesat Rating (string, required)
+        - type: Number (enum[string], required) - Type of this customr field
+            Member:
+                - Text
+                - Number
+                - Enum
+    + Body
+
+            [
+                {
+                    "id": 1,
+                    "name": "Simplesat Rating",
+                    "type": "Number"
+                },
+                {
+                    "id": 2,
+                    "name": "Simplesat Comment",
+                    "type": "Text"
+                }
+            ]
