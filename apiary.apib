@@ -28,17 +28,62 @@ HOST: https://api.simplesat.io/api
                 "sentiment": "positive"
             }
 
-### Create an Answer [POST]
-
-+ Request Update JSON Message (application/json)
-
-            { "rating": "5" }
-
-+ Response 204
-
 # Group Integrations
 
-## Custom field mapping [/fields]
+## Custom field mapping [/dashboard/integrations/custom_fields]
+
+### Retrieve custom fields settings [GET]
+
++ Request (application/json)
+
++ Response 200
+
+    + Attribute(object)
+        - rating: Simplesat Rating (string) - ID to match with available field options
+        - sentiment: Simplesat Sentiment (string) - ID to match with available field options
+        - comment: Simplesat Comment (string) - ID to match with available field options
+
+    + Body
+    
+            {
+                "rating": "Simplesat Rating",
+                "sentiment": "Simplesat Sentiment",
+                "comment": "Simplesat Comment"
+            }
+            
+### Save custom fields settings [POST]
+
++ Request (application/json)
+    
+    + Attribute(object)
+        - rating: Simplesat Rating (string) - ID to match with available field options
+        - sentiment: Simplesat Sentiment (string) - ID to match with available field options
+        - comment: Simplesat Comment (string) - ID to match with available field options
+
+    + Body
+    
+            {
+                "rating": "Simplesat Rating",
+                "sentiment": "Simplesat Sentiment",
+                "comment": "Simplesat Comment"
+            }
+            
++ Response 200
+
+    + Attribute(object)
+        - rating: Simplesat Rating (string) - ID to match with available field options
+        - sentiment: Simplesat Sentiment (string) - ID to match with available field options
+        - comment: Simplesat Comment (string) - ID to match with available field options
+
+    + Body
+    
+            {
+                "rating": "Simplesat Rating",
+                "sentiment": "Simplesat Sentiment",
+                "comment": "Simplesat Comment"
+            }
+
+## Custom field mapping options [/dashboard/integrations/custom_fields/options]
 
 ### Retrieve available field options [GET]
 
